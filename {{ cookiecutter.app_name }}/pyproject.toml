@@ -1,0 +1,32 @@
+[tool.poetry]
+authors = []
+description = "{{ cookiecutter.description }}"
+name = "{{ cookiecutter.app_name }}"
+version = "0.1.0"
+
+[tool.poetry.scripts]
+{{ cookiecutter.app_name }} = "{{ cookiecutter.app_name }}.main:run"
+
+[tool.poetry.dependencies]
+parrottools = "^0.2.7"
+prometheus-client = "^0.14.1"
+pydantic = "^1.9.0"
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+black = "^22.3.0"
+flake8 = "^4.0.1"
+isort = "^5.10.1"
+mypy = "^0.942"
+pytest = "^7.0"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+
+[tool.pytest.ini_options]
+markers = ["override_settings"]
+
+[tool.mypy]
+ignore_missing_imports = true
+no_site_packages = true

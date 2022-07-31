@@ -1,0 +1,5 @@
+{
+  "app_name": "",
+  "description": "",
+  "ecr_repository_name": "{{ cookiecutter.app_name }}"
+}

@@ -1,0 +1,4 @@
+[flake8]
+statistics = True
+max-line-length = 120
+exclude = .git,__pycache__,.pytest_cache
