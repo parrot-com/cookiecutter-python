@@ -36,3 +36,4 @@ You need to manually perform the following steps:
 * better loggers by default (https://github.com/parrot-com/sample/pull/1#discussion_r877155269)
 * switch to alpine (https://github.com/parrot-com/sample/pull/1#discussion_r877163909)
 * notes on how to run tests, black, isort, flake8
+* try https://pypi.org/project/Flake8-pyproject/ instead of this
