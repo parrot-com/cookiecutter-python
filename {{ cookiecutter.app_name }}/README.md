@@ -17,7 +17,6 @@ cookiecutter gh:parrot-com/cookiecutter-python
 You need to manually perform the following steps:
 
 1. create a GitHub repository
-    * add `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` to the "Settings -> Secrets -> Actions"
 1. create a Sentry project
     * TODO: set env variables
 1. create ECR repository
