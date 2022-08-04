@@ -18,6 +18,7 @@ class Settings(BaseSettings):
     sentry_dsn: Optional[HttpUrl] = None
 
     # Prometheus
+    prometheus_enabled: bool = True
     prometheus_port: int = 8081
 
     class Config:

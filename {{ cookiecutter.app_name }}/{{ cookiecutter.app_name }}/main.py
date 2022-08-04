@@ -10,7 +10,8 @@ logger = get_logger(__name__)
 
 
 def run():
-    prometheus_client.start_http_server(settings.prometheus_port)
+    if settings.prometheus_enabled:
+        prometheus_client.start_http_server(settings.prometheus_port)
 
     while True:
         logger.info("tick")
