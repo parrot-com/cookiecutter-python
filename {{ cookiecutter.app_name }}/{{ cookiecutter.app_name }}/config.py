@@ -1,4 +1,3 @@
-import functools
 import os
 from typing import Literal, Optional
 
@@ -6,8 +5,6 @@ from pydantic import BaseSettings, HttpUrl
 
 app_env = os.environ.get("APP_ENV", "dev")
 
-
-@functools.lru_cache
 class Settings(BaseSettings):
     app_name: str = "{{ cookiecutter.app_name }}"
     app_env: Literal["production", "staging", "dev", "test"] = "dev"
