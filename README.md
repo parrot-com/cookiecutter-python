@@ -24,4 +24,4 @@ You need to manually perform the following steps:
 
 * [ ] different .env files
 * [ ] docker-compose.yaml
-* [ ] run linters using pre-commit (https://github.com/parrot-com/sample/pull/1#discussion_r871692033)
+* [ ] run linters using pre-commit
