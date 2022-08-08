@@ -45,6 +45,8 @@ jobs:
           tags: ${{ "{{" }} env.LOCAL_IMAGE_URL }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          # TODO: add multi-stage build to github ci
+          target: dev
 
       - name: Flake8
         run: |
