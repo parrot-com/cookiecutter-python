@@ -2,6 +2,7 @@ import logging
 
 import sentry_sdk
 from parrottools.logging import configure_logging as configure
+from parrottools.logging import log_context  # noqa
 
 from {{ cookiecutter.app_name }}.config import settings
 
