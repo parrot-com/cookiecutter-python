@@ -1,0 +1,29 @@
+name: main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Render:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Render template
+        uses: andrewthetechie/gha-cookiecutter@main
+        with:
+          template: .
+          cookiecutterValues: '{ "app_name": "example", "description": "An example cookiecutter-python repository" }'
+
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+        with:
+          target-branch: main
+          source-directory: example
+          destination-github-username: parrot-com
+          destination-repository-name: cookiecutter-python-example
