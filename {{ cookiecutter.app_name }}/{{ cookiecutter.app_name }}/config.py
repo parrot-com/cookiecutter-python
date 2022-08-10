@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     app_name: str = "{{ cookiecutter.app_name }}"
     app_env: Literal["production", "staging", "dev", "test"] = "dev"
     release_version: Optional[str] = None
-    log_level: Literal["ERROR", "WARNING", "INFO", "DEBUG"] = "ERROR"
+    log_level: Literal["error", "warning", "info", "debug"] = "error"
 
     # Sentry
     sentry_dsn: Optional[HttpUrl] = None
