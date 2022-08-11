@@ -7,7 +7,7 @@
 How to run tests:
 
 ```sh
-docker compose exec -e APP_ENV=test {{ cookiecutter.app_nae }} pytest
+docker compose exec -e APP_ENV=test {{ cookiecutter.app_name }} pytest
 ```
 
 How to run black:
