@@ -20,6 +20,7 @@ flake8-bugbear = "^22.7.1"
 isort = "^5.10.1"
 mypy = "^0.942"
 pytest = "^7.0"
+pre-commit = "^2.20.0"
 
 [build-system]
 build-backend = "poetry.core.masonry.api"
@@ -31,3 +32,7 @@ markers = ["override_settings"]
 [tool.mypy]
 ignore_missing_imports = true
 no_site_packages = true
+
+[tool.isort]
+profile = "black"
+force_single_line = true

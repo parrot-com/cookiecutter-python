@@ -2,6 +2,7 @@ import logging
 
 import sentry_sdk
 from parrottools.logging import configure_logging as configure
+from parrottools.logging import log_contex
 
 from {{ cookiecutter.app_name }}.config import settings
 
@@ -25,3 +26,5 @@ def configure_logging() -> None:
 
 def get_logger(logger_name: str) -> logging.Logger:
     return logging.getLogger(logger_name)
+
+__all__ = ["configure_logging", "get_logger", "log_context"]
