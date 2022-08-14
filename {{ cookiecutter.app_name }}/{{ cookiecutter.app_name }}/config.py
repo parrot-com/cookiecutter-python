@@ -5,6 +5,7 @@ from pydantic import BaseSettings, HttpUrl
 
 app_env = os.environ.get("APP_ENV", "dev")
 
+
 class Settings(BaseSettings):
     app_name: str = "{{ cookiecutter.app_name }}"
     app_env: Literal["production", "staging", "dev", "test"] = "dev"
