@@ -1,7 +1,9 @@
 import os
-from typing import Literal, Optional
+from typing import Literal
+from typing import Optional
 
-from pydantic import BaseSettings, HttpUrl
+from pydantic import BaseSettings
+from pydantic import HttpUrl
 
 app_env = os.environ.get("APP_ENV", "dev")
 
