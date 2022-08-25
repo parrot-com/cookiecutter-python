@@ -1,0 +1,16 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImagePolicy
+metadata:
+  # Guarantees unique policy name (required for image updates)
+  name: {{ cookiecutter.app_name }}-staging
+spec:
+  imageRepositoryRef:
+    name: {{ cookiecutter.app_name }}
+  policy:
+    numerical:
+      order: asc
+  filterTags:
+    # Example main-620566591-3bb8e3e
+    pattern: '^main-(?P<runId>\d+)-\w+$'
+    extract: "$runId"

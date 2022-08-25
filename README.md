@@ -18,7 +18,7 @@ You need to manually perform the following steps:
 1. create a Sentry project
     * TODO: set env variables
 1. create ECR repository
-1. TODO: add k8s manifests
+1. add k8s manifests, use `k8s-manifests` directory for reference
 
 ## TODO
 

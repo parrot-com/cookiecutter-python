@@ -1,0 +1,10 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: {{ cookiecutter.app_name }}
+spec:
+  image: 325310340739.dkr.ecr.us-east-1.amazonaws.com/{{ cookiecutter.app_name }}
+  interval: 5m0s
+  secretRef:
+    name: ecr-credentials

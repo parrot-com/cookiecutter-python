@@ -1,5 +1,6 @@
 {
   "app_name": "",
   "description": "",
+  "k8s_namespace": "",
   "ecr_repository_name": "{{ cookiecutter.app_name }}"
 }

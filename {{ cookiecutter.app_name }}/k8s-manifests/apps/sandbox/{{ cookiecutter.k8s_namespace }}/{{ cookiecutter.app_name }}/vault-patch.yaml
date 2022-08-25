@@ -1,0 +1,8 @@
+---
+apiVersion: secrets.parrothq.com/v1
+kind: VaultSecret
+metadata:
+  name: {{ cookiecutter.app_name }}
+spec:
+  paths:
+    - secret/staging/{{ cookiecutter.k8s_namespace }}/{{ cookiecutter.app_name }}

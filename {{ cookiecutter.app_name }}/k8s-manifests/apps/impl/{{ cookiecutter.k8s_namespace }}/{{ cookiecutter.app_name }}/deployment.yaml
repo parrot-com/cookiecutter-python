@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ cookiecutter.app_name }}
+spec:
+  template:
+    spec:
+      containers:
+        - name: app
+          ports:
+            - containerPort: 8080
+              name: http
+            - containerPort: 8081
+              name: http-metrics
+          envFrom:
+            - secretRef:
+                name: {{ cookiecutter.app_name }}
+          env:
+            - name: PROMETHEUS_PORT
+              value: "8081"
+          livenessProbe:
+            httpGet:
+              path: /status
+              port: "http"
+          readinessProbe:
+            httpGet:
+              path: /status
+              port: "http"
+          resources:
+            limits:
+              cpu: 250m
+              memory: 256Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
