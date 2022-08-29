@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
       - name: app
-        image: 325310340739.dkr.ecr.us-east-1.amazonaws.com/{{ cookiecutter.app_name }}:INSERT_FIRST_BUILD_TAG # {"$imagepolicy": "flux-system:{{ cookiecutter.app_name }}-sandbox"}
+        image: 325310340739.dkr.ecr.us-east-1.amazonaws.com/{{ cookiecutter.app_name }}:placeholder # {"$imagepolicy": "flux-system:{{ cookiecutter.app_name }}-staging"}
