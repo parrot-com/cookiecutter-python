@@ -1,0 +1,82 @@
+# Default values for {{ cookiecutter.app_name }}.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+imagePullSecrets: []
+
+image:
+  repository: 325310340739.dkr.ecr.us-east-1.amazonaws.com/{{ cookiecutter.app_name }}
+  pullPolicy: IfNotPresent
+  tag: ""
+
+serviceAccount:
+  create: false
+  annotations: {}
+
+service:
+  enabled: true
+  type: ClusterIP
+  port: 80
+ingress:
+  enabled: false
+  annotations: {}
+  tls: []
+  hosts:
+    - host: chart-example.local
+      paths: []
+
+ports:
+  - name: http
+    containerPort: 8080
+    protocol: TCP
+  - name: metrics
+    containerPort: 8081
+    protocol: TCP
+livenessProbe:
+  httpGet:
+    path: /status
+    port: "http"
+    scheme: HTTP
+readinessProbe:
+  httpGet:
+    path: /status
+    port: "http"
+    scheme: HTTP
+
+resources:
+  requests:
+    memory: 128Mi
+    cpu: 50m
+  limits:
+    memory: 1Gi
+    cpu: 500m
+
+terminationGracePeriodSeconds: 60
+lifecycle:
+  preStop:
+    exec:
+      # higher than time-to-detect of unhealthy target in ALB (currently 2x15s)
+      # lower than terminationGracePeriodSeconds to give pod time to terminate gracefully
+      # ref: https://github.com/kubernetes-sigs/aws-load-balancer-controller/issues/1064
+      command: ["sleep", "30"]
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+replicaCount: 1
+strategy: {}
+
+extraEnv: []
+envFrom: []
+
+podAnnotations: {}
+podSecurityContext: {}
+securityContext: {}
+initContainers: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
