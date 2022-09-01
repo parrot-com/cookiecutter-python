@@ -2,6 +2,7 @@
   "app_name": "",
   "description": "",
   "ecr_repository_name": "{{ cookiecutter.app_name }}",
+  "module_name": "{{ cookiecutter.app_name.replace('-', '_') }}",
   "_copy_without_render": [
     "charts/{{ cookiecutter.app_name }}/templates/*"
   ]
