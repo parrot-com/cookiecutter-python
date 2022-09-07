@@ -39,7 +39,7 @@ COPY . .
 RUN --mount=type=cache,target=/root/.cache/ \
 	poetry install --no-dev
 
-CMD ["{{ cookiecutter.app_name }}"]
+CMD ["{{ cookiecutter.module_name }}"]
 
 
 ########################################################
@@ -53,4 +53,4 @@ COPY . .
 RUN --mount=type=cache,target=/root/.cache/ \
 	poetry install
 
-CMD ["{{ cookiecutter.app_name }}"]
+CMD ["{{ cookiecutter.module_name }}"]
