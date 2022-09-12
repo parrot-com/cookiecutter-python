@@ -16,7 +16,7 @@ jobs:
         uses: andrewthetechie/gha-cookiecutter@main
         with:
           template: .
-          cookiecutterValues: '{ "app_name": "example", "description": "An example cookiecutter-python repository", "ecr_repository": "cookiecutter-python-example" }'
+          cookiecutterValues: '{ "app_name": "example", "description": "An example cookiecutter-python repository", "ecr_repository_name": "cookiecutter-python-example" }'
 
       - name: Pushes to another repository
         uses: cpina/github-action-push-to-another-repository@main
