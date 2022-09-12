@@ -5,7 +5,7 @@ name = "{{ cookiecutter.app_name }}"
 version = "0.1.0"
 
 [tool.poetry.scripts]
-{{ cookiecutter.app_name }} = "{{ cookiecutter.app_name }}.main:run"
+{{ cookiecutter.module_name }} = "{{ cookiecutter.module_name }}.main:run"
 
 [tool.poetry.dependencies]
 parrottools = "^0.2.7"

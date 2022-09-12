@@ -67,7 +67,7 @@ jobs:
           docker run \
             --rm \
             $LOCAL_IMAGE_URL \
-            poetry run mypy /app/{{ cookiecutter.app_name }} /app/tests
+            poetry run mypy /app/{{ cookiecutter.module_name }} /app/tests
 
       - name: isort
         run: |

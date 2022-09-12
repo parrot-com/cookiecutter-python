@@ -1,6 +1,6 @@
 import pytest
 
-from {{ cookiecutter.app_name }}.config import settings
+from {{ cookiecutter.module_name }}.config import settings
 
 
 @pytest.fixture(autouse=True)

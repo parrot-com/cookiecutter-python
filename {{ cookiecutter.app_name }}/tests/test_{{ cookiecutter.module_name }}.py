@@ -1,6 +1,6 @@
 import pytest
 
-from {{ cookiecutter.app_name }}.config import settings
+from {{ cookiecutter.module_name }}.config import settings
 
 
 # example: this is how you would override settings when running tests

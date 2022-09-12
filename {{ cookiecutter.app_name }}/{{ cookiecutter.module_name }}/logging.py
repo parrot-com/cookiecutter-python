@@ -4,7 +4,7 @@ import sentry_sdk
 from parrottools.logging import configure_logging as configure
 from parrottools.logging import log_context
 
-from {{ cookiecutter.app_name }}.config import settings
+from {{ cookiecutter.module_name }}.config import settings
 
 
 def configure_logging() -> None:
