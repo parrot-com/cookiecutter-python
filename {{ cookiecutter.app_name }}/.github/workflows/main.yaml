@@ -8,7 +8,7 @@ on:
 
 env:
   LOCAL_REGISTRY: ghcr.io/parrot-com
-  IMAGE_REPOSITORY: {{ cookiecutter.ecr_repository_name }}
+  IMAGE_REPOSITORY: "{{ cookiecutter.ecr_repository_name }}"
   IMAGE_REGISTRY: 325310340739.dkr.ecr.us-east-1.amazonaws.com
 
 jobs:
@@ -99,3 +99,12 @@ jobs:
         run: |
           docker tag $LOCAL_IMAGE_URL $ECR_IMAGE_URL
           docker push $ECR_IMAGE_URL
+
+      - name: Build and push helm chart
+        if: github.ref == 'refs/heads/main'
+        env:
+          OCI_REPOSITORY_URL: oci://${{ env.IMAGE_REGISTRY }}
+        run: |
+          cd charts
+          package=$(helm package {{ cookiecutter.app_name }})
+          helm push $(basename "$package") $OCI_REPOSITORY_URL
