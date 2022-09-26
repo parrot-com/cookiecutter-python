@@ -8,7 +8,7 @@ on:
 
 env:
   LOCAL_REGISTRY: ghcr.io/parrot-com
-  IMAGE_REPOSITORY: { { cookiecutter.ecr_repository_name } }
+  IMAGE_REPOSITORY: "{{ cookiecutter.ecr_repository_name }}"
   IMAGE_REGISTRY: 325310340739.dkr.ecr.us-east-1.amazonaws.com
 
 jobs:
