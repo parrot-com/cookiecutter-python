@@ -21,6 +21,7 @@ You need to manually perform the following steps:
 1. create ECR repository
 1. TODO: add k8s manifests
     * set Helm chart env variables (you will probably want to set `APP_ENV` or similar variable when the project is used in multiple environments)
+    * add pod monitor into Prometheus stack
 
 ## TODO
 
