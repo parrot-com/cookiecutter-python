@@ -19,6 +19,12 @@ And that's it.
 
 ## Local development
 
+How to add a new package:
+
+```sh
+docker compose exec {{ cookiecutter.app_name }} poetry add package_name
+```
+
 How to run tests:
 
 ```sh
