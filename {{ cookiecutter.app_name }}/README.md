@@ -2,7 +2,28 @@
 
 {{ cookiecutter.description }}
 
+## Installation
+
+Follow these steps:
+
+1. Make a copy of the environment file & fill in the variables.
+   ```sh
+   cp .env.example .env
+   ```
+2. Start the service
+   ```
+   docker compose up
+   ```
+
+And that's it.
+
 ## Local development
+
+How to add a new package:
+
+```sh
+docker compose exec {{ cookiecutter.app_name }} poetry add package_name
+```
 
 How to run tests:
 
